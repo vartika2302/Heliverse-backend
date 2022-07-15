@@ -28,8 +28,8 @@ app.use(express.json());
 
 // middlewares
 
-app.use("/api/auth",authRoute);
-app.use("/api/user",userRoute);
+app.use("/auth",authRoute);
+app.use("/user",userRoute);
 
 //error handler middleware
 app.use((err, req, res, next) => {

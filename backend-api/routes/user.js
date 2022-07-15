@@ -7,9 +7,9 @@ const { verifyToken, verifyUser } = require("../utils/verifyToken");
 router.get("/:id", verifyUser, userCtrl.getUser);
 
 // UPDATE A USER
-router.put("/update/:id", verifyUser, userCtrl.updateUser);
+router.put("/:id", verifyUser, userCtrl.updateUser);
 
 // DELETE A USER
-router.delete("/delete/:id", verifyUser, userCtrl.deleteUser);
+router.delete("/:id", verifyUser, userCtrl.deleteUser);
 
 module.exports = router;
