@@ -46,7 +46,7 @@ module.exports.login = async (req, res, next) => {
     );
     if (isPasswordCorrect) {
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY);
-      const { password, ...otherDetails } = user._doc;
+      const {password,...otherDetails} = user._doc;
       return res.cookie("access_token", token).status(200).json(otherDetails);
     } else {
       return next(createError(400, "Password is not correct!"));
